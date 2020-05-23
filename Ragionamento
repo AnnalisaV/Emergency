@@ -1,0 +1,26 @@
+MODELLO DEL MONDO: 
+-Quanti pazienti ci sono adesso nel pronto, ripartiti tra triage, sala d'attesa e studio medico, ognuno con il 
+ suo codice e tempo di arrivo -> Collection <Paziente> che evolve 
+Che codici : white -> non urgente, al timeout va a casa
+             yellow-> da guardare ma che puo' aspettare, oltre il timeout diventa red
+             red-> grave da guardare subito, oltre il timeout diventa black
+             black-> morto
+
+La simulazione ha lo scopo di trovare il nuemro migliore di studi medici da avere 
+con un flusso di pazienti a giornata (8.00-20.00) X intervallati da un valore in minuti
+la probabilita' di avere i vari codici sono sequenziali : white-yellow-red-black. (un po' deterministico)
+
+PARAMETRI DI SIMULAZIONE (INPUT)
+-Il numero di studi medici disponibili
+-numero di pazienti con il tempo di arrivo ed il corrispettivo codice
+-orario della giornata lavorativa 
+
+PARAMETRI DI OUTPUT: 
+-numero di pazienti dimessi
+-numero di pazienti morti
+numero di pazienti che sono andati a casa 
+
+Per rendere il problema piu' stocastico -> intervallo di arrivo fra un paziente e l'altro random, 
+codici assegnati in modo meno sequenziale cioe' con probabilita' differenti (maggiore ai yellow e minore ai
+red), anche i tempi di triage o di visita nello studio medico posso essere condisiderate piu' variabili
+          

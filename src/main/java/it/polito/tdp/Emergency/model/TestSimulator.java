@@ -7,17 +7,17 @@ public class TestSimulator {
 
 	public static void main(String[] args) {
 		Simulator sim = new Simulator() ;
-		sim.setNS(2);
+		sim.setNumStudiMedici(2);
 		sim.setT_ARRIVAL(Duration.ofMinutes(3));
-		sim.init();
+		sim.inizializzazione();
 		sim.run();
 		
 		System.out.println("** STATISTICHE **") ;
-		System.out.format("Studi medici: %d\n", sim.getNS());
+		//System.out.format("Studi medici: %d\n", sim.get);
 		System.out.format("Pazienti:     %d\n", sim.getPazientiTot());
-		System.out.format("Dimessi:      %d\n", sim.getPazientiDimessi());
-		System.out.format("Morti:        %d\n", sim.getPazientiMorti());
-		System.out.format("Abbandonano:  %d\n", sim.getPazientiAbbandonano());
+		System.out.format("Dimessi:      %d\n", sim.getDimessi());
+		System.out.format("Morti:        %d\n", sim.getMorti());
+		System.out.format("Abbandonano:  %d\n", sim.getaCasa());
 	}
 
 }
